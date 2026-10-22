@@ -1,0 +1,18 @@
+Tristan Crawford
+
+1.It builds the list with one call to randint() per element. Each randint() call and each append is 0(1), and it runs n times, so the total is 0(n).
+
+2. Where N = data_size and T = num_trials:
+- random_int_list(): -(N)
+- data.copy(): 0(N)
+- sorted_data.sort(): 0(N log N), done once
+- loop of T trials: each does one linear search and one binary, that is 0(T* log N)) = 0(N log N).
+if T>= log N, the linear seaeches over powers and it is 0(T*N).
+
+3. 32 searchhes
+
+
+4 alternatives:
+-A list, return [avglinear, avg_binary]
+- A dictonary, return {"linear": avg_linear, "binary": avg_binary}
+- A custom class (or dataclass) with fields for each average.
